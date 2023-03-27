@@ -63,6 +63,7 @@
     data() {
       return {
         newProduct: "",
+        counter: 3,
           products: [
             {
               id: 1,
@@ -80,11 +81,12 @@
     methods: {
       createProduct() {
         this.products.push({
-          id: 3,
+          id: this.counter,
           name: this.newProduct,
           price: 199,
         });
         this.newProduct = "";
+        this.counter++;
       },
   
       deleteProduct(product) {
